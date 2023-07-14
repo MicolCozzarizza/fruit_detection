@@ -9,9 +9,8 @@ from skimage import data, exposure
 from sklearn import svm
 import numpy as np
 
-#dataset_path = r'C:\Users\mcozzarizza\Desktop\pear_img'
-dataset_path = r'C:\Users\mcozzarizza\Desktop\output_imgs'
-#dataset_path = r'C:\Users\mcozzarizza\Desktop\trial'
+dataset_path = r'C:\Users\mcozzarizza\Desktop\pear_img'
+#dataset_path = r'C:\Users\mcozzarizza\Desktop\output_imgs'
 img_path = glob(join(dataset_path, '*'))
 
 
@@ -26,6 +25,7 @@ def draw_contours(index):
     #gray = cv.equalizeHist(gray) #to improve contrast
     cv.imshow('gray blurred', gray)
 
+    #get binary image either with canny edges or with threshold
     #gray = cv.normalize(gray, None, alpha=0,beta=200, norm_type=cv.NORM_MINMAX)
     gray = cv.Canny(image, 100, 200, L2gradient= True)
     cv.imshow('gray', gray)
@@ -35,7 +35,6 @@ def draw_contours(index):
     #binary = cv.adaptiveThreshold(gray, 255, cv.ADAPTIVE_THRESH_GAUSSIAN_C, cv.THRESH_BINARY, 81, 2)
 
     cv.imshow('binary img', gray)
-    #cv.imshow('binary img 2', binary2)
 
     # find the contours from the thresholded image+6
     contours, hierarchy = cv.findContours(gray, cv.RETR_TREE, cv.CHAIN_APPROX_SIMPLE) #mode = RETR_TREE, RETR_EXTERNAL
@@ -54,28 +53,3 @@ def draw_contours(index):
     return tuple(contours), image, gray
 
 draw_contours(23)
-
-
-
-
-
-'''
-    print(len(approx))
-    if len(approx)==5:
-        print("Blue = pentagon")
-        cv.drawContours(img,[cnt],0,255,-1)
-    elif len(approx)==3:
-        print("Green = triangle")
-        cv.drawContours(img,[cnt],0,(0,255,0),-1)
-    elif len(approx)==4:
-        print("Red = square")
-        cv.drawContours(img,[cnt],0,(0,0,255),-1)
-    elif len(approx) == 6:
-        print("Cyan = Hexa")
-        cv.drawContours(img,[cnt],0,(255,255,0),-1)
-    elif len(approx) == 8:
-        print("White = Octa")
-        cv.drawContours(img,[cnt],0,(255,255,255),-1)
-    elif 
-'''
-
