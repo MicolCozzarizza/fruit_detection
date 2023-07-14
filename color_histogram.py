@@ -14,7 +14,7 @@ import statistics as stats
 dataset_path = r'C:\Users\mcozzarizza\Desktop\pear_img'
 img_path = glob(join(dataset_path, '*'))
 
-
+#calculate color histograms of 2 images and comapres them, under assumption that images with similar color distributions contain equally similar visual contents
 def calculate_hist_bgr(index):
     img = cv.imread(img_path[index])
     hist_bgr = []
