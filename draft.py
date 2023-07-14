@@ -24,6 +24,8 @@ plt.plot(hist_bw, color="black")
 plt.show()
 #print(hist_bw)
 
+
+#analysis of all the image pixel values to mark those that could correspond to the color green of the pears
 height, width = img_bw.shape
 for width_value in range(width):
     for height_value in range(height):
