@@ -32,7 +32,7 @@ cv.waitKey(0)
 
 #img_path1 = r'C:\Users\mcozzarizza\Desktop\result img_screenshot_24.04.2023_2.png'
 #img_path2 = r'C:\Users\mcozzarizza\Desktop\result img_screenshot_24.04.2023_neg2.png'
-'''
+
 img1 = cv.imread(img_path[33])
 img2 = cv.imread(img_path[31])
 height, width, channel = img1.shape
@@ -47,7 +47,7 @@ cv.imshow('original', img1)
 cv.imshow('blended img', blended)
 cv.waitKey(0)
 
-'''
+
 
 
 
