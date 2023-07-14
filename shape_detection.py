@@ -6,7 +6,6 @@ import numpy as np
 # Read the input image
 dataset_path = r'C:\Users\mcozzarizza\Desktop\pear_img'
 #dataset_path = r'C:\Users\mcozzarizza\Desktop\output_imgs'
-#dataset_path = r'C:\Users\mcozzarizza\Desktop\trial'
 img_path = glob(join(dataset_path, '*'))
 
 img = cv.imread(img_path[15])
@@ -19,7 +18,6 @@ ret,binary = cv.threshold(gray,150,255,cv.THRESH_BINARY)
 '''
 gray = cv.blur(gray, (3,3))
 #edges = cv.Canny(gray, 0, 250, apertureSize=3)
-#cv.imshow('edges', edges)
 
 #retVal, binary = cv.threshold(gray, 0, 255, cv.THRESH_BINARY+cv.THRESH_OTSU) #value of the threshold determined automatically (bimodal distribution)
 retVal, binary = cv.threshold(gray, 120, 255, cv.THRESH_BINARY)
