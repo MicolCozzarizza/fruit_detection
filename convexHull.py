@@ -3,9 +3,8 @@ from glob import glob
 from os.path import join
 import numpy as np
 
-#dataset_path = r'C:\Users\mcozzarizza\Desktop\pear_img'
+dataset_path = r'C:\Users\mcozzarizza\Desktop\pear_img'
 #dataset_path = r'C:\Users\mcozzarizza\Desktop\output_imgs'
-dataset_path = r'C:\Users\mcozzarizza\Desktop\trial'
 img_path = glob(join(dataset_path, '*'))
 img = cv.imread(img_path[12])
 
